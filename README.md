@@ -1,7 +1,7 @@
 # HartmanWatson
-R functions for evaluation of the Hartman-Watson distribution
+R functions for evaluation of the Hartman-Watson function $$\theta(r,t) = \frac{r}{\sqrt{2\pi^3 t}} e^{\frac{\pi^2}{2t}}\int_0^\infty e^{-\frac{\xi^2}{2t}} e^{-r\cosh \xi} \sinh \xi \sin \frac{\pi \xi}{t} d\xi$$
 
-R functions for the evaluation of the Hartman-Watson distribution $\theta(r,t)$ using the asymptotic expansion in [Pirjol (2020)](https://arxiv.org/abs/2001.09579).
+The function $\theta(r,t)$ is evaluated using the asymptotic expansion in [Pirjol (2020)](https://arxiv.org/abs/2001.09579).
 The auxiliary functions $F(\rho),G(\rho)$ appearing in this expansion are approximated as series in $\log(1/\rho)$ using the methods described in [Nandori, Pirjol (2021)](https://arxiv.org/abs/2209.09412).
 These series converge within the convergence domain $|\log\rho| < 3.49295$. Outside of this region, the tail asymptotics of $F(\rho),G(\rho)$ are used. 
 
