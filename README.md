@@ -1,8 +1,10 @@
 # HartmanWatson
 R functions for evaluation of the Hartman-Watson function $$\theta(r,t) = \frac{r}{\sqrt{2\pi^3 t}} e^{\frac{\pi^2}{2t}}\int_0^\infty e^{-\frac{\xi^2}{2t}} e^{-r\cosh \xi} \sinh \xi \sin \frac{\pi \xi}{t} d\xi$$
 
-The function $\theta(r,t)$ is evaluated using the asymptotic expansion in [Pirjol (2020)](https://arxiv.org/abs/2001.09579).
-The auxiliary functions $F(\rho),G(\rho)$ appearing in this expansion are approximated as series in $\log(1/\rho)$ using the methods described in [Nandori, Pirjol (2021)](https://arxiv.org/abs/2209.09412).
+The function $\theta(r,t)$ is evaluated as the leading order term in the asymptotic expansion in [Pirjol (2020)](https://arxiv.org/abs/2001.09579).
+$$\theta(\rho/t,t)= \frac{1}{2\pi t} e^{-\frac{1}{t}(F(\rho) - \frac{\pi^2}{2}} G(\rho)(1+O(t))$$ 
+
+The functions $F(\rho),G(\rho)$ appearing in this expansion are approximated as series in $\log(1/\rho)$ using the methods described in [Nandori, Pirjol (2021)](https://arxiv.org/abs/2209.09412).
 These series converge within the convergence domain $|\log\rho| < 3.49295$. Outside of this region, the tail asymptotics of $F(\rho),G(\rho)$ are used. 
 
 The function **Ffunc(rho,n)** computes the function $F(\rho)$ using an expansion in $\log(1/\rho)$ keeping $n$ terms (default $n=5$, maximum allowed value 8). 
