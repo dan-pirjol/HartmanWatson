@@ -1,6 +1,6 @@
 # The series expansions for F(rho), G(rho) converge for rho in [0.03,32.88]
 # Use tail expansions outside of this range
-Ffunc <- function(rho,n=5){
+Fexp <- function(rho,n=5){
   PI = 4*atan(1.0)
   # The coefficients in the expansions of F(rho) 
   cF <- c(1,1,-2/15,19/525,-22/2625,4742/3031875,-43636/197071875,146287/6897515625)
@@ -19,7 +19,7 @@ Ffunc <- function(rho,n=5){
 }
 
 #----------------------------------------------------------
-Gfunc <- function(rho,n=5){
+Gexp <- function(rho,n=5){
   PI = 4*atan(1.0)
   # The coefficients in the expansions of G(rho) 
   cG <- c(1/5,-1/70,-1/1050,299/323400,-96917/525525000,-107749/10032750000,27333619/1876124250000,
@@ -40,10 +40,31 @@ Gfunc <- function(rho,n=5){
 #-----------------------------------------------------------
 # function returning theta(r,t)
 
-thetaHW <- function(r, t){
+thetaHW <- function(r, t, n=5){
   f1 <- 1/(2*PI*t)
   rho <- r*t
   
-  aux <- f1*Gfunc(rho)*exp(-1/t*(Ffunc(rho) - 0.5*PI^2))
+  aux <- f1*Gexp(rho,n)*exp(-1/t*(Fexp(rho,n) - 0.5*PI^2))
   return(aux)
 }
+#-----------------------------------------------------------
+# load pre-computed values of F,G on a grid [0.01 - 5.00] with step 0.01
+allData <- read.csv(file = 'tableFGto5.csv')
+#-----------------------------------------------------------
+library("stats")
+Finterp <- function(rho){
+  z <- approx(allData$rho,allData$F,rho,method="linear",rule=2)
+
+  f <- z$y
+  
+  return(f)
+}
+#-----------------------------------------------------------
+Ginterp <- function(rho){
+  z <- approx(allData$rho,allData$G,rho,method="linear",rule=2)
+  
+  g <- z$y
+  
+  return(g)
+}
+#-----------------------------------------------------------
