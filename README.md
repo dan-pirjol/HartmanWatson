@@ -4,6 +4,9 @@ R functions for evaluation of the Hartman-Watson function $$\theta(r,t) = \frac{
 The function $\theta(r,t)$ is evaluated as the leading order term in the asymptotic expansion in [Pirjol (2020)](https://arxiv.org/abs/2001.09579).
 $$\theta(\rho/t,t)= \frac{1}{2\pi t} e^{-\frac{1}{t}(F(\rho) - \frac{\pi^2}{2}} G(\rho)(1+O(t))$$ 
 
+Denoting the leading term in this expansion $\hat \theta(\rho/t,t)$, the $O(t)$ error is bounded as
+$|\theta(\rho/t,t) - \hat\theta(\rho/t,t)| \leq \frac{1}{70} t \hat \theta(\rho/t,t)$ uniformly over $\rho$.
+
 The functions $F(\rho),G(\rho)$ appearing in this expansion are approximated as series in $\log(1/\rho)$ using the methods described in [Nandori, Pirjol (2021)](https://arxiv.org/abs/2209.09412).
 These series converge within the convergence domain $|\log\rho| < 3.49295$. Outside of this region, the tail asymptotics of $F(\rho),G(\rho)$ are used. 
 
@@ -11,9 +14,8 @@ The function **Ffunc(rho,n)** computes the function $F(\rho)$ using an expansion
 
 The function **Gfunc(rho,n)** computes the function $G(\rho)$ using an expansion in $\log(1/\rho)$ keeping $n$ terms (default $n=5$, maximum allowed value 8).
 
-The function **thetaHW(r,t)** computes $\theta(r,t)$ using the expansions for $F(\rho),G(\rho)$ keeping $n=5$ terms.
-This function returns $\hat \theta(r,t)$, the leading term in the $t\to 0$ asymptotic expansion of $\theta(r,t)$ at fixed $r t = \rho$. The error of this approximation is bounded as
-$|\theta(r,t) - \hat\theta(r,t)| \leq \frac{1}{70} t \hat \theta(r,t)$ 
+The function **thetaHW(r,t)** returns $\hat \theta(r,t)$ using the expansions for $F(\rho),G(\rho)$ keeping $n=5$ terms.
+This function returns $\hat \theta(r,t)$, the leading term in the $t\to 0$ asymptotic expansion of $\theta(r,t)$ at fixed $r t = \rho$. 
 
 ## **Sample usage**
 ```
