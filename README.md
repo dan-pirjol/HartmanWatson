@@ -13,11 +13,15 @@ $|\theta(\rho/t,t) - \hat\theta(\rho/t,t)| \leq \frac{1}{70} t \hat \theta(\rho/
 The code approximates the functions $F(\rho),G(\rho)$ as series in $\log(1/\rho)$ using the methods described in [Nandori, Pirjol (2021)](https://arxiv.org/abs/2209.09412).
 These series converge within the convergence domain $|\log\rho| < 3.49295$. Outside of this region, the tail asymptotics of $F(\rho),G(\rho)$ are used. 
 
-The function **Ffunc(rho,n)** computes the function $F(\rho)$ using an expansion in $\log(1/\rho)$ keeping $n$ terms (default $n=5$, maximum allowed value 8). 
+The function **Fexp(rho,n)** computes the function $F(\rho)$ using an expansion in $\log(1/\rho)$ keeping $n$ terms (default $n=5$, maximum allowed value 8). 
 
-The function **Gfunc(rho,n)** computes the function $G(\rho)$ using an expansion in $\log(1/\rho)$ keeping $n$ terms (default $n=5$, maximum allowed value 8).
+The function **Gexp(rho,n)** computes the function $G(\rho)$ using an expansion in $\log(1/\rho)$ keeping $n$ terms (default $n=5$, maximum allowed value 8).
 
-The function **thetaHW(r,t)** returns $\hat \theta(r,t)$ using the expansions for $F(\rho),G(\rho)$.
+The function **thetaHW(r,t,n)** returns $\hat \theta(r,t)$ using the expansions for $F(\rho),G(\rho)$.
+
+The function **Finterp(rho)** evaluates the function $F(\rho)$ by linear interpolation from a table of pre-computed exact values on a grid $\rho:[0.01,5.00]$ with step 0.01. Flat extrapolation outside the grid range.
+
+The function **Ginterp(rho)** evaluates $G(\rho)$ by linear interpolation from a table of pre-computed exact values on a grid $\rho:[0.01,5.00]$ with step 0.01. Flat extrapolation outside the grid range.
  
 
 ## **Sample usage**
