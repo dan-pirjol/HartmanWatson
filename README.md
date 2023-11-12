@@ -5,7 +5,7 @@ The function $\theta(r,t)$ is evaluated as the leading order term in the $t\to 0
 The leading term in this expansion is 
 $$\hat \theta(\rho/t,t)= \frac{1}{2\pi t} e^{-\frac{1}{t}(F(\rho) - \frac{\pi^2}{2}} G(\rho)(1+O(t))$$ 
 
-The functions $F(\rho),G(\rho)$ appearing in this expansion are known exactly. The $O(t)$ term is also known in closed form.
+The functions $F(\rho),G(\rho)$ appearing in this expansion are known exactly. 
 
 The $O(t)$ error is bounded as
 $|\theta(\rho/t,t) - \hat\theta(\rho/t,t)| \leq \frac{1}{70} t \hat \theta(\rho/t,t)$ uniformly over $\rho$.
