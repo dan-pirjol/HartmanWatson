@@ -26,7 +26,7 @@ The function **Ginterp(rho)** evaluates $G(\rho)$ by linear interpolation from a
 
 ## **Sample usage**
 ```
-#Reproduce the plots in Figure 4 of https://arxiv.org/abs/2001.09579
+#Reproduce the plots in Figure 4 of https://arxiv.org/abs/2001.09579 giving thetaHW(r,t) for r = 0.5, 1.0, 1.5
 source("HWfunctions.R")
 x <- seq(0, 4, 0.01)
 n <- length(x)
