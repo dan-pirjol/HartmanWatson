@@ -1,4 +1,4 @@
-# HartmanWatson
+# HartmanWatson Calculator
 R functions for evaluation of the Hartman-Watson function $$\theta(r,t) = \frac{r}{\sqrt{2\pi^3 t}} e^{\frac{\pi^2}{2t}}\int_0^\infty e^{-\frac{\xi^2}{2t}} e^{-r\cosh \xi} \sinh \xi \sin \frac{\pi \xi}{t} d\xi$$
 
 The function $\theta(r,t)$ is evaluated as the leading order term in the $t\to 0$ asymptotic expansion at fixed $r t = \rho$ proposed in [Pirjol (2020)](https://arxiv.org/abs/2001.09579).
