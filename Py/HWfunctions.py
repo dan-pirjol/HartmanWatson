@@ -8,7 +8,7 @@ def Fexp(rho, n=5):
     log_rho = np.log(1/rho)
     cF = np.array([np.pi**2/2-1, 1., 1., -2/15, 19/525, -22/2625,
                    4742/3031875, -43636/197071875, 146287/6897515625])
-    mid = polyval(log_rho, cF)
+    mid = polyval(log_rho, cF[:n+1])
     
     low = 0.5*log_rho**2 + log_rho*np.log(np.abs(2*log_rho)) - log_rho + np.log(np.abs(2*log_rho))**2 + 0.5*np.pi**2
     high = rho + 0.5*np.pi**2/(1+rho)
@@ -24,7 +24,7 @@ def Gexp(rho, n=5):
     log_rho = np.log(1/rho)
     cG = np.array([1., 1/5, -1/70, -1/1050, 299/323400, -96917/525525000, -107749/10032750000,
                    27333619/1876124250000, -308907281743/109790791110000000])
-    mid = np.sqrt(3)*polyval(log_rho, cG)
+    mid = np.sqrt(3)*polyval(log_rho, cG[:n+1])
 
     low = np.sqrt(np.abs(log_rho))*(1-rho**2) + 0.5*(np.log(np.abs(2*log_rho))+1)/np.sqrt(np.abs(log_rho))
     high = np.pi*rho/(1+rho)**(1.5)
