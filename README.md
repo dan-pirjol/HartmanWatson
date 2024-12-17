@@ -46,5 +46,12 @@ lines(y3~x, type="l", col="red")
 ```
 ![figure4](https://github.com/dan-pirjol/HartmanWatson/assets/60016102/7158ad3e-0d8d-411f-82ea-e8f3673b6a34)
 
+The approximation error for $F(\rho)$ approximated by truncating the series expansion to $n=5,6,7$ terms is shown in the plot below. The plot shows $\log_{10} |F(\rho)-F_n(\rho)|$ with $n=5,6,7$.
+![Frhoerror](https://github.com/user-attachments/assets/25b674f1-e301-4a46-8884-ff4e557809f8)
+
+The approximation error for $G(\rho)$ is shown in the plot below. Same as above.
+![Grhoerror](https://github.com/user-attachments/assets/4e743ea6-4f8a-4962-be44-3b3db12304cf)
+
+
 
 
